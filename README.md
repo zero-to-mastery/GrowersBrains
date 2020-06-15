@@ -2,7 +2,7 @@
 
 A project that will help everyone in the community sharpen their skillsets,learn new languages,work in a team inviorment, and make something that helps the world. 
 
-The project will be using react native,react,node,mongodb,
+The project will be using react native,react,node,mongodb,and redux.
 
 A project built to solve the problems Gowers Globally are Facing.
 
