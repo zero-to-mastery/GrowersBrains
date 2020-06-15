@@ -6,7 +6,6 @@ The project will be using react native,react,node,mongodb,and redux.
 
 A project built to solve the problems Gowers Globally are Facing.
 
-Take a look at growersbrains.com
 
 GrowersBrains is an app designed to bring expert growing techniques to everyone.Grow Green and Grow Clean.
 
