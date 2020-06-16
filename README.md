@@ -41,6 +41,8 @@ All of these features would allow for great data to be collected and machine lea
 ## Getting Started / Installtion
 If you want to join send @nah a message in discord.
 
+https://expo.io/learn follow the steps they list. 
+
 Trello board: https://trello.com/invite/b/1VgFXdo7/0135f2a7507e6062eb03f23bcf76ae3c/growers-brains
 
 Project Lead: @nah
