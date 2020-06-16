@@ -39,14 +39,24 @@ All of these features would allow for great data to be collected and machine lea
 
 
 ## Getting Started / Installtion
-Here you should details how people can get involved, eg. how to get access to the trello, who are the project management team and how to contact them, how to pick up tasks. 
+If you want to join send @nah a message in discord.
 
-Should also contain instructions for installing you current code base and getting it running to the point collaborators cant star working on it.
+Trello board: https://trello.com/invite/b/1VgFXdo7/0135f2a7507e6062eb03f23bcf76ae3c/growers-brains
+
+Project Lead: @nah
+
+Project Manager: @Kael0527
+
+Database Lead:@Vali
+
+React Native Lead: @Gajendra
+
 
 
 ## Handy Resources
-Fill this sections with any handy guides or information you think might apply to the project, whether that be related to the Growing industry or about the stack you are using etc. 
 
+https://reactnative.dev/docs/getting-started
 
+https://www.google.com/amp/s/www.nbcnews.com/better/amp/ncna781806
 
-
+https://www.google.com/amp/s/www.vox.com/platform/amp/the-highlight/2019/12/30/21031913/how-to-keep-houseplants-alive-masterclass-plants-swiss-cheese-millennials-plantfluencer
