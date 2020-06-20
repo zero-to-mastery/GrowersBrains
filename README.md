@@ -78,6 +78,8 @@ As soon as you get there, you are going to see a green ‘compare and create a p
 
 Click on it, and type your message, click on create pull request
 
+Thanks to: @chisombiri
+
 ## Handy Resources
 
 https://reactnative.dev/docs/getting-started
