@@ -37,7 +37,6 @@ Sections:
 
 All of these features would allow for great data to be collected and machine learning to be created to diagnose plant problems, and make elite growing accessible to everyone no matter their experience level.
 
-
 ## Getting Started / Installtion
 If you want to join send @nah a message in discord.
 
@@ -53,7 +52,31 @@ Database Lead:@Vali
 
 React Native Lead: @Gajendra
 
+## To Contribute here(Version control)
+Step 1: Click on Fork at the top right corner
 
+Step 2: Clone your forked repository
+
+Step 3: cd into the cloned folder | GrowersBrains
+
+Step 4: git remote add upstream https://github.com/zero-to-mastery/GrowersBrains
+
+Step 5: git pull upstream "branch"
+
+Step 6: Check out to the task branch | git checkout -b <NAME_OF_THE_TASK>
+
+Creating a pull request(when done with your code/changes)
+Step 1: Run: git add .
+
+Step 2: Run: git commit -m ""
+
+Step 3: git push origin <BRANCH_NAME>
+
+Go to the repository https://github.com/zero-to-mastery/GrowersBrains
+
+As soon as you get there, you are going to see a green ‘compare and create a pull request’
+
+Click on it, and type your message, click on create pull request
 
 ## Handy Resources
 
