@@ -17,7 +17,7 @@ The way that I came up with the idea, is that I have 15 years of experience of g
 That lead me to the idea of creating an app that brings a collective consciousness of Growers together to change the way the world grows. Growing plants can be very expensive and can lead to great losses if not done properly. When done properly it can be a fun, exciting and relaxing way to control the quality of the food or medicine that you are growing and ensure that it is as clean and pure as possible.
 
 ## Tech Stack
-- React Native
+- React JS
 - Node
 - MongoDB
 - Redux
