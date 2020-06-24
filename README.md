@@ -1,89 +1,68 @@
-# GrowersBrains
-GrowersBrains is an app designed to solve the problems that growers globally are Facing and to bring expert growing techniques to everyone. Grow Green and Grow Clean.
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-As a community project that will enable collaborators to:
-- Sharpen their skill sets
-- Learn new languages
-- Work in a team enviorment
-- Get real world experience
-- Make something that helps the world
-- learn all about the process of taking an app from idea to product
-- and most imporantly, have fun along the way.
+## Available Scripts
 
+In the project directory, you can run:
 
-## Motivation
-The way that I came up with the idea, is that I have 15 years of experience of growing plants. Starting in middle school horticulture class at 11 to now at 26, I've learned alot from books and the internet, but the place that I have always learned the most from was other growers teaching me the techniques that took them years to develop and perfect.
+### `npm start`
 
-That lead me to the idea of creating an app that brings a collective consciousness of Growers together to change the way the world grows. Growing plants can be very expensive and can lead to great losses if not done properly. When done properly it can be a fun, exciting and relaxing way to control the quality of the food or medicine that you are growing and ensure that it is as clean and pure as possible.
+Runs the app in the development mode.<br />
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-## Tech Stack
-- React JS
-- Node
-- MongoDB
-- Redux
+The page will reload if you make edits.<br />
+You will also see any lint errors in the console.
 
-## Features & Designs
-The current design that I have for the app is to have eight different sections.
+### `npm test`
 
-Sections: 
-1) Welcome page that users would have to login to. 
-2) Growers Rankings- create rankings of the best growers in the world that could help people with one on one consulting. 
-3) Daily Grow- A daily picture of the plants a user is growing allowing to keep an eye on the plants and make sure their healthy, allows to diagnose any problems that arise. 
-4) Greenhouse-"What's in your Greenhouse" A locker of all the plants a person is growing and the data of what happens daily, once the plant is done growing a timelapse gets generated. 
-5) How to- Articles and videos from the top growers to teach every user the A to Z of growing. 
-6) Consulting- Allows top growers an opportunity to connect with new users to help them create a plan to make sure they optimize their grow and everything runs smoothly. 
-7) Competition - A daily, weekly, and monthly competition to see who the best grower is in many different categories. 8)Best products- Links and articles reviewing the best products for growers to use that are peer reviewed and approved. With affiliate codes included.
+Launches the test runner in the interactive watch mode.<br />
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
+### `npm run build`
 
-All of these features would allow for great data to be collected and machine learning to be created to diagnose plant problems, and make elite growing accessible to everyone no matter their experience level.
+Builds the app for production to the `build` folder.<br />
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
-## Getting Started / Installtion
-If you want to join send @nah a message in discord.
+The build is minified and the filenames include the hashes.<br />
+Your app is ready to be deployed!
 
-https://expo.io/learn follow the steps they list. 
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-Trello board: https://trello.com/invite/b/1VgFXdo7/0135f2a7507e6062eb03f23bcf76ae3c/growers-brains
+### `npm run eject`
 
-Project Lead: @nah
+**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-Project Manager: @Kael0527
+If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Database Lead:@Vali
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
-React Native Lead: @Gajendra
+You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-## To Contribute here(Version control)
-Step 1: Click on Fork at the top right corner
+## Learn More
 
-Step 2: Clone your forked repository
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-Step 3: cd into the cloned folder | GrowersBrains
+To learn React, check out the [React documentation](https://reactjs.org/).
 
-Step 4: git remote add upstream https://github.com/zero-to-mastery/GrowersBrains
+### Code Splitting
 
-Step 5: git pull upstream "branch"
+This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
 
-Step 6: Check out to the task branch | git checkout -b <NAME_OF_THE_TASK>
+### Analyzing the Bundle Size
 
-Creating a pull request(when done with your code/changes)
-Step 1: Run: git add .
+This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
 
-Step 2: Run: git commit -m ""
+### Making a Progressive Web App
 
-Step 3: git push origin <BRANCH_NAME>
+This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
 
-Go to the repository https://github.com/zero-to-mastery/GrowersBrains
+### Advanced Configuration
 
-As soon as you get there, you are going to see a green ‘compare and create a pull request’
+This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
 
-Click on it, and type your message, click on create pull request
+### Deployment
 
-Thanks to: @chisombiri
+This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
 
-## Handy Resources
+### `npm run build` fails to minify
 
-https://reactnative.dev/docs/getting-started
-
-https://www.google.com/amp/s/www.nbcnews.com/better/amp/ncna781806
-
-https://www.google.com/amp/s/www.vox.com/platform/amp/the-highlight/2019/12/30/21031913/how-to-keep-houseplants-alive-masterclass-plants-swiss-cheese-millennials-plantfluencer
+This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
