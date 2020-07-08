@@ -30,9 +30,9 @@ This lead me to the idea of creating an app that brings a collective consciousne
 
 :flying_saucer: Node
 
-:artificial_satellite: MongoDB
+:artificial_satellite: graphql
 
-:airplane: Redux
+:airplane: apollo express
 
 # Features & Designs
 
