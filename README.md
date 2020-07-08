@@ -51,6 +51,12 @@ All of these features would allow for great data to be collected and machine lea
 4. `git pull upstream` <YOUR_BRANCH>
 5. Check out to the task branch by `git checkout -b` <NAME_OF_THE_TASK>
 
+# To run the app in development
+
+1. Run `npm install` from the root and also from the client folder
+2. run `npm run dev` from the root
+Note: If you want to run backend only, run `npm run start`
+
 # Creating a pull request (when done with your code/changes)
 
 1. Run `git add .`
