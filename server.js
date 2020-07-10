@@ -14,6 +14,7 @@ const uri = process.env.ATLAS_URI.replace(
   "<password>",
   process.env.DB_PASSWORD
 );
+
 mongoose
   .connect(uri, {
     useNewUrlParser: true,
@@ -23,7 +24,7 @@ mongoose
   })
   .then(() => console.log("Successfully connected to the database!"));
 
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 5000;
 const server = app.listen(port, () => {
   console.log(`Server is running on port ${port}....`);
 });
