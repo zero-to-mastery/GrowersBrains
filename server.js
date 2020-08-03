@@ -10,19 +10,15 @@ process.on('uncaughtException', (err) => {
 
 const app = require('./app');
 
-const uri = process.env.ATLAS_URI.replace(
-  '<password>',
-  process.env.DB_PASSWORD
-);
-
 mongoose
-  .connect(uri, {
+  .connect(process.env.MONGO_URI, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useFindAndModify: false,
     useCreateIndex: true,
   })
-  .then(() => console.log('Successfully connected to the database!'));
+  .then(() => console.log('Successfully connected to the database!'))
+  .catch((err) => console.error(err));
 
 const port = process.env.PORT || 5000;
 const server = app.listen(port, () => {
