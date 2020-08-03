@@ -53,9 +53,17 @@ All of these features would allow for great data to be collected and machine lea
 
 # To run the app in development
 
-1. Run `npm install` from the root and also from the client folder
+1. Run `npm install` from the **root** and also from the **client** folder
 2. run `npm run dev` from the root
    Note: If you want to run backend only, run `npm run start`
+
+## Set environment variables
+
+You can create a .env file in your root project folder and add theses configurations. Be sure to modify the values beforehand. **_Never commit .env file to github._**
+
+```bash
+MONGO_URI = YOUR_MONGO_URI
+```
 
 # Creating a pull request (when done with your code/changes)
 
