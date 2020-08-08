@@ -35,9 +35,15 @@ plantSchema.statics.calculNumberOfPlants = async function (growerId) {
     },
   ]);
   // console.log(stats);
-  await User.findByIdAndUpdate(growerId, {
-    numberOfPlants: stats[0].numPlant,
-  });
+  if (stats > 0) {
+    await User.findByIdAndUpdate(growerId, {
+      numberOfPlants: stats[0].numPlant,
+    });
+  } else {
+    await User.findByIdAndUpdate(growerId, {
+      numberOfPlants: 0,
+    });
+  }
 };
 
 //DOCUMENT MIDDLEWARE : run before .save() and .create() methods
