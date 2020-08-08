@@ -22,6 +22,40 @@ const plantSchema = new mongoose.Schema({
     ref: 'User',
   },
 });
+plantSchema.statics.calculNumberOfPlants = async function (growerId) {
+  const stats = await this.aggregate([
+    {
+      $match: { grower: growerId },
+    },
+    {
+      $group: {
+        _id: '$grower',
+        numPlant: { $sum: 1 },
+      },
+    },
+  ]);
+  // console.log(stats);
+  await User.findByIdAndUpdate(growerId, {
+    numberOfPlants: stats[0].numPlant,
+  });
+};
+
+//DOCUMENT MIDDLEWARE : run before .save() and .create() methods
+plantSchema.post('save', function () {
+  this.constructor.calculNumberOfPlants(this.grower);
+});
+
+//This is a query middleware run before findByIdAndUpdate & findByIdAndDelete
+//so whenever a plant was updated or deleted the numberOfplants fields also will be updated
+plantSchema.pre(/^findOneAnd/, async function (next) {
+  this.plant = await this.findOne();
+  // console.log(this.plant);
+  next();
+});
+plantSchema.post(/^findOneAnd/, async function () {
+  //we access this.plant from the pre middleware
+  await this.plant.constructor.calculNumberOfPlants(this.plant.grower);
+});
 
 const Plant = mongoose.model('Plant', plantSchema);
 
