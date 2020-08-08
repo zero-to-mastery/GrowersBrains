@@ -1,9 +1,37 @@
+const crypto = require('crypto');
 const jwt = require('jsonwebtoken');
 const { promisify } = require('util');
 
-const User = require('./../models/userModel');
-const catchAsync = require('./../utils/catchAsync');
-const AppError = require('./../utils/appError');
+const User = require('../models/userModel');
+const catchAsync = require('../utils/catchAsync');
+const AppError = require('../utils/appError');
+const sendEmail = require('../utils/email');
+
+const createSignToken = (statusCode, user, res) => {
+  const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET, {
+    expiresIn: process.env.JWT_EXPIRES_IN,
+  });
+
+  const cookieOptions = {
+    expires: new Date(
+      Date.now() + process.env.COOKIE_EXPIRES_IN * 24 * 60 * 60 * 1000
+    ),
+    httpOnly: true, // set to true mean that the browser cannot access or modify the cookie in any way (!important to prevent cross-site scripting attacks)
+    secure: process.env.NODE_ENV === 'production', //This part is temporary
+  };
+
+  res.cookie('jwt', token, cookieOptions); //send cookie 'jwt'
+
+  //remove the password field from the response
+  user.password = undefined;
+  res.status(statusCode).json({
+    status: 'success',
+    token,
+    data: {
+      user,
+    },
+  });
+};
 
 exports.signup = catchAsync(async (req, res, next) => {
   const user = await User.create({
@@ -13,14 +41,7 @@ exports.signup = catchAsync(async (req, res, next) => {
     passwordConfirm: req.body.passwordConfirm,
   });
 
-  const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET, {
-    expiresIn: process.env.JWT_EXPIRES_IN,
-  });
-
-  res.status(201).json({
-    status: 'success',
-    token,
-  });
+  createSignToken(201, user, res);
 });
 
 exports.login = catchAsync(async (req, res, next) => {
@@ -33,13 +54,8 @@ exports.login = catchAsync(async (req, res, next) => {
   if (!user || !(await user.correctPassword(password, user.password))) {
     return next(new AppError('Incorrect email or password', 401));
   }
-  const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET, {
-    expiresIn: process.env.JWT_EXPIRES_IN,
-  });
-  res.status(200).json({
-    status: 'success',
-    token,
-  });
+
+  createSignToken(200, user, res);
 });
 
 //THis will be used as a middleware to protect routes
@@ -51,6 +67,8 @@ exports.protect = catchAsync(async (req, res, next) => {
     req.headers.authorization.startsWith('Bearer')
   ) {
     token = req.headers.authorization.split(' ')[1];
+  } else if (req.cookies.jwt) {
+    token = req.cookies.jwt;
   }
 
   if (!token) {
@@ -103,13 +121,73 @@ exports.updatePassword = catchAsync(async (req, res, next) => {
   await user.save();
 
   //4) LOg in user , send JWT
-  const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET, {
-    expiresIn: process.env.JWT_EXPIRES_IN,
+  createSignToken(200, user, res);
+});
+exports.forgotPassword = catchAsync(async (req, res, next) => {
+  const user = await User.findOne({ email: req.body.email });
+  if (!user) {
+    return next(new AppError('There is no user with that email address!', 404));
+  }
+
+  // 1) Generate the random password reset token
+  const resetToken = user.createPasswordResetToken();
+  await user.save({ validateBeforeSave: false }); // don't run validator before saving to the db
+
+  //For now we will use that sample message
+  const resetUrl = `${req.protocol}://${req.get(
+    'host'
+  )}/api/v1/users/resetPassword/${resetToken}/`;
+  const message = `Forgot your password ? Submit a PATCH request to the url : ${resetUrl}.\n 
+  If you didn't forget your password please ignore this message.`;
+
+  try {
+    await sendEmail({
+      email: user.email,
+      subject: 'Your password reset token (valid for 10 min)',
+      message,
+    });
+
+    res.status(200).json({
+      status: 'success',
+      message: 'Token sent to email!',
+    });
+  } catch (err) {
+    user.passwordResetToken = undefined;
+    user.passwordResetExpires = undefined;
+    await user.save({ validateBeforeSave: false });
+
+    return next(
+      new AppError('There was an error sending the email. Try again later!'),
+      500
+    );
+  }
+});
+
+exports.resetPassword = catchAsync(async (req, res, next) => {
+  //Get User based on the token
+  const hashedToken = crypto
+    .createHash('sha256')
+    .update(req.params.token)
+    .digest('hex');
+
+  //Find the user
+  const user = await User.findOne({
+    passwordResetToken: hashedToken,
+    passwordResetExpires: { $gt: Date.now() },
   });
-  res.status(200).json({
-    status: 'success',
-    token,
-  });
+
+  if (!user) {
+    return next(new AppError('Token is invalid or has expired', 400));
+  }
+  user.password = req.body.newPassword;
+  user.passwordConfirm = req.body.passwordConfirm;
+  user.passwordResetToken = undefined;
+  user.passwordResetExpires = undefined;
+
+  await user.save();
+
+  //login the user and send token
+  createSignToken(200, user, res);
 });
 
 exports.restrictTo = (...roles) => {
