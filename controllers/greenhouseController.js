@@ -3,7 +3,7 @@ const catchAsync = require('../utils/catchAsync');
 
 exports.getAllGreenHouses = catchAsync(async (req, res, next) => {
   const greenHouse = await GreenHouse.find()
-    .populate({ path: 'growerId', select: '-__v -passwordChangedAt' })
+    .populate({ path: 'grower', select: '-__v -passwordChangedAt' })
     .populate({ path: 'plants', select: '-__v' });
   res.status(200).json({
     status: 'success',
