@@ -14,6 +14,7 @@ const articleSchema = new mongoose.Schema(
     author: {
       type: mongoose.Schema.ObjectId,
       ref: 'User',
+      required: [true, 'Article must have an author'],
     },
     ratingsAverage: {
       type: Number,
@@ -46,7 +47,7 @@ articleSchema.statics.calculNumberOfArticles = async function (authorId) {
     },
   ]);
   // console.log(stats);
-  if (stats > 0) {
+  if (stats.length > 0) {
     await User.findByIdAndUpdate(authorId, {
       numberOfArticles: stats[0].numArticle,
     });

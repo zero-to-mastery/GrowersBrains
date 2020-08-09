@@ -33,6 +33,6 @@ const greenhouseSchema = new mongoose.Schema({
   },
 });
 
-const Greenhouse = mongoose.model('Greenhouse ', greenhouseSchema);
+const Greenhouse = mongoose.model('Greenhouse', greenhouseSchema);
 
 module.exports = Greenhouse;

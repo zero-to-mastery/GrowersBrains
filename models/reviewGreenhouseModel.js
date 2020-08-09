@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const GreenHouse = require('./greenHouseModel');
+const GreenHouse = require('./greenhouseModel');
 
 const reviewGreenhouseSchema = new mongoose.Schema({
   review: {

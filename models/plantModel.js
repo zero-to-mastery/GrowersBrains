@@ -20,6 +20,7 @@ const plantSchema = new mongoose.Schema({
   grower: {
     type: mongoose.Schema.ObjectId,
     ref: 'User',
+    required: [true, 'A plant must have a grower'],
   },
 });
 plantSchema.statics.calculNumberOfPlants = async function (growerId) {
@@ -35,7 +36,7 @@ plantSchema.statics.calculNumberOfPlants = async function (growerId) {
     },
   ]);
   // console.log(stats);
-  if (stats > 0) {
+  if (stats.length > 0) {
     await User.findByIdAndUpdate(growerId, {
       numberOfPlants: stats[0].numPlant,
     });
