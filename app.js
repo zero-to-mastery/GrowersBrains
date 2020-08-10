@@ -12,7 +12,8 @@ const productRouter = require('./routes/productRoutes');
 const greenhouseRouter = require('./routes/greenhouseRoutes');
 const userRouter = require('./routes/userRoutes');
 const articleRouter = require('./routes/articleRoutes');
-const reviewRouter = require('./routes/reviewRoutes');
+const reviewArticleRouter = require('./routes/reviewArticleRoutes');
+const reviewGreenhouseRouter = require('./routes/reviewGreenhouseRoutes');
 
 const app = express();
 
@@ -45,9 +46,10 @@ app.use(xss());
 app.use('/api/v1/plants', plantRouter);
 app.use('/api/v1/users', userRouter);
 app.use('/api/v1/products', productRouter);
-app.use('/api/v1/greenhouse', greenhouseRouter);
+app.use('/api/v1/greenhouses', greenhouseRouter);
 app.use('/api/v1/articles', articleRouter);
-app.use('/api/v1/reviews', reviewRouter);
+app.use('/api/v1/reviews-article', reviewArticleRouter);
+app.use('/api/v1/reviews-greenhouse', reviewGreenhouseRouter);
 
 app.all('*', (req, res, next) => {
   next(new AppError(`Can't find ${req.originalUrl} on this server`, 404));

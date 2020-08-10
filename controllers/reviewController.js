@@ -4,6 +4,19 @@ const GreenhouseReview = require('../models/reviewGreenhouseModel');
 const catchAsync = require('../utils/catchAsync');
 const AppError = require('../utils/appError');
 
+//Allow nested routes
+exports.setUserArticleIds = (req, res, next) => {
+  if (!req.body.user) req.body.user = req.user.id; //from the protect middleware
+  if (!req.body.article) req.body.article = req.params.articleId;
+  next();
+};
+//Allow nested routes
+exports.setUserGreenhouseIds = (req, res, next) => {
+  if (!req.body.user) req.body.user = req.user.id; //from the protect middleware
+  if (!req.body.greenHouse) req.body.greenHouse = req.params.greenhouseId;
+  next();
+};
+
 exports.getAllArticleReviews = catchAsync(async (req, res, next) => {
   const reviews = await ArticleReview.find();
   res.status(200).json({
