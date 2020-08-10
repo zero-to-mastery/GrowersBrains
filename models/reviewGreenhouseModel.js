@@ -15,15 +15,23 @@ const reviewGreenhouseSchema = new mongoose.Schema({
   user: {
     type: mongoose.Schema.ObjectId,
     ref: 'User',
+    required: [true, 'A review must belong to a user'],
   },
   greenHouse: {
     type: mongoose.Schema.ObjectId,
     ref: 'GreenHouse',
+    required: [true, 'A review must belong to a greenhouse'],
   },
   createdAt: {
     type: Date,
     default: Date.now(),
   },
+});
+
+//populate the user field (select only the name and photo)
+reviewGreenhouseSchema.pre(/^find/, function (next) {
+  this.populate({ path: 'user', select: 'name photo' });
+  next();
 });
 
 reviewGreenhouseSchema.statics.calculAverageRatings = async function (
