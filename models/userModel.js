@@ -138,6 +138,30 @@ userSchema.methods.createPasswordResetToken = function () {
   return resetToken;
 };
 
+//if we will need the articles or the plants when querying for a user we will keep this part
+userSchema.virtual('articles', {
+  ref: 'Article',
+  foreignField: 'author',
+  localField: '_id',
+});
+userSchema.virtual('plants', {
+  ref: 'Plant',
+  foreignField: 'grower',
+  localField: '_id',
+});
+userSchema.pre(/^find/, async function (next) {
+  this.populate({
+    path: 'articles',
+    select: 'title content ratingsAverage ratingsQuantity createdAt',
+  }).populate({
+    path: 'plants',
+    select: 'images description name createdAt',
+  });
+  next();
+});
+
+//We CAN ADD HERE ALSO REVIEWS THAT A USER HAVE IF THAT WILL BE USEFUL IN THE FRONTEND
+
 const User = mongoose.model('User', userSchema);
 
 module.exports = User;
