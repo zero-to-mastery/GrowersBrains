@@ -91,9 +91,9 @@ Trello board: https://trello.com/invite/b/1VgFXdo7/0135f2a7507e6062eb03f23bcf76a
 
 :briefcase: Project Manager: **@Kael0527**
 
-:bar_chart: Database Lead: **@Vali**
+:bar_chart: front end Lead: @natalie 
 
-:rocket: React Native Lead: **@Gajendra**
+:rocket: React Lead: **@Gajendra**
 
 # Handy Resources
 
