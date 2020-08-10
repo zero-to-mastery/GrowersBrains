@@ -1,10 +1,7 @@
 const mongoose = require('mongoose');
 
-const User = require('./../models/userModel');
-const Plant = require('./../models/plantModel');
-
 const greenhouseSchema = new mongoose.Schema({
-  growerId: {
+  grower: {
     type: mongoose.Schema.ObjectId,
     ref: 'User',
   },
@@ -14,16 +11,14 @@ const greenhouseSchema = new mongoose.Schema({
       ref: 'Plant',
     },
   ],
-  questions: [
-    {
-      q: {
-        type: String,
-      },
-      a: {
-        type: String,
-      },
-    },
-  ],
+  ratingsAverage: {
+    type: Number,
+    default: 5,
+  },
+  ratingsQuantity: {
+    type: Number,
+    default: 0,
+  },
   soil: {
     type: {
       type: String,
@@ -38,6 +33,6 @@ const greenhouseSchema = new mongoose.Schema({
   },
 });
 
-const Greenhouse = mongoose.model('Greenhouse ', greenhouseSchema);
+const Greenhouse = mongoose.model('Greenhouse', greenhouseSchema);
 
 module.exports = Greenhouse;

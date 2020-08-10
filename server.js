@@ -17,8 +17,8 @@ mongoose
     useFindAndModify: false,
     useCreateIndex: true,
   })
-  .then(() => console.log('Successfully connected to the database!'))
-  .catch((err) => console.error(err));
+  .then(() => console.log('Successfully connected to the database!'));
+//No need to add the catch block because we add an event listener to the `unhandledRejection` he will take care off it
 
 const port = process.env.PORT || 5000;
 const server = app.listen(port, () => {
@@ -27,7 +27,7 @@ const server = app.listen(port, () => {
 
 process.on('unhandledRejection', (err) => {
   console.log('UNHADLED REJECTION! 🤯 Shutting down....');
-  console.log(err);
+  console.log(err.name, err.message);
   //Here we give the server time to finish all the requests that are still pending
   //or being handled at the time, and only after that the server is thein basically killed
   server.close(() => {

@@ -1,4 +1,4 @@
-const Plant = require('./../models/plantModel');
+const Plant = require('../models/plantModel');
 const catchAsync = require('../utils/catchAsync');
 const AppError = require('../utils/appError');
 

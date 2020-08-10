@@ -10,8 +10,27 @@ const productSchema = new mongoose.Schema({
     type: Number,
     required: [true, 'A product must have a price'],
   },
-  pictures: [String],
-  articles: [String], //?Array of links
+  description: {
+    type: String,
+    required: [true, 'A product must have a description'],
+  },
+  brand: {
+    type: String,
+    required: [true, 'A product must have a brand'],
+  },
+  category: {
+    type: String,
+    required: [true, 'A product must belong to a category'],
+  },
+  supplier: {
+    type: String,
+    required: [true, 'A product must have a supplier'],
+  },
+  images: [String],
+  createdAt: {
+    type: Date,
+    default: Date.now(),
+  },
 });
 
 const Product = mongoose.model('Product', productSchema);

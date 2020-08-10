@@ -9,6 +9,16 @@ const filterRequestObj = async (reqBodyObj, ...allowedFields) => {
   return filteredObj;
 };
 
+exports.getMe = catchAsync(async (req, res, next) => {
+  const user = await User.findById(req.user.id);
+  res.status(200).json({
+    status: 'success',
+    data: {
+      user,
+    },
+  });
+});
+
 exports.updateMe = catchAsync(async (req, res, next) => {
   //To avoid that a malicious user change his role to an admin and grant all the access to the app
   const filteredBody = await filterRequestObj(req.body, 'name', 'email');
