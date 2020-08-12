@@ -1,0 +1,35 @@
+{
+  "repoName": "GrowersBrains",
+  "tagline": "Solving the problems that growers globally are Facing and to bring expert growing techniques to everyone",
+  "color": "#8244BC",
+  "logo": "",
+  "channelName": "growersbrains",
+  "desc": [
+    "an established but welcoming student lead project designed to solve the problems that growers globally are facing, bringing expert and advice to everyone!",
+    "GrowersBrains is looking for collaborators looking to flex their powers either in frontend, backend or machine learning development, bringing peace and tranquillity to the world during these stressful times.",
+    "Join the team of awesome and creative individuals creating an app that will add real value to the world by empowering people to grow successful plants and crops.",
+  ],
+  "team": [
+    ["@Nah", "Project Lead"],
+    ["@Kael0527", "Project Manager"],
+    ["@natalie_p", "Front End Lead"],
+    ["@Gajendra", "Back End Lead"],
+  ],
+  "links": [
+    [
+      "README.md",
+      "https://github.com/zero-to-mastery/GrowersBrains/blob/master/README.md"
+    ]
+  ],
+  "poi": [
+    [
+      "README.md",
+      "https://github.com/zero-to-mastery/GrowersBrains/blob/master/README.md"
+    ]
+  ],
+  "tasks": {
+    "title": "Trello Tasks",
+    "desc": "We use Trello to manage the tasks within this project. Further information on how to use Trello and claim a task can be found in the [README.md](https://trello.com/invite/b/1VgFXdo7/0135f2a7507e6062eb03f23bcf76ae3c/growers-brains) file on Github."
+  },
+  "welcomeMsg":"Please take a moment to read through the pinned messages. Here you will find important notes and how to get stated with the project!"
+}
