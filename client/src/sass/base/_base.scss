@@ -1,0 +1,16 @@
+html{
+    font-size: 62.5%; // This defines 1rem value
+}
+
+*, 
+*::after, 
+*::before{
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+body{
+    padding: 30px;
+    box-sizing: border-box;
+}
