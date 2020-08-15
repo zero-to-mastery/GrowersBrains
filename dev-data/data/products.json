@@ -1,0 +1,52 @@
+[
+  {
+    "_id": "5f30491dc673961aab2f24b4",
+    "name": "Hormodin 3, 8 ounce",
+    "price": 23,
+    "description": "Bibendum neque egestas congue quisque egestas diam in arcu cursus. Nisl nisi scelerisque eu ultrices.",
+    "brand": "Brand-1",
+    "category": "GROWTH & ROOTING HORMONES",
+    "supplier": "Growers_Brains",
+    "images": ["product-0.jpeg", "product-1.jpg", "product-2.jpg"]
+  },
+  {
+    "_id": "5f30491dc673961aab2f24b5",
+    "name": "Sumagic, Gallon",
+    "price": 420,
+    "description": "Faucibus scelerisque eleifend donec pretium vulputate sapien. Proin sagittis nisl rhoncus mattis rhoncus urna neque. ",
+    "brand": "Brand-2",
+    "category": "GROWTH & ROOTING HORMONES",
+    "supplier": "Growers_Brains",
+    "images": ["product-0.jpeg", "product-1.jpg", "product-2.jpg"]
+  },
+  {
+    "_id": "5f30491dc673961aab2f24b6",
+    "name": "Cycocel",
+    "price": 60,
+    "description": " Neque laoreet suspendisse interdum consectetur libero id faucibus nisl.",
+    "brand": "Brand-3",
+    "category": "GROWTH & ROOTING HORMONES",
+    "supplier": "Growers_Brains",
+    "images": ["product-0.jpeg", "product-1.jpg", "product-2.jpg"]
+  },
+  {
+    "_id": "5f30491dc673961aab2f24b7",
+    "name": "Battery Powered Hand Seeder",
+    "price": 70,
+    "description": "Tincidunt arcu non sodales neque sodales ut etiam sit amet. Nulla porttitor massa id neque aliquam",
+    "brand": "Brand-4",
+    "category": "SEED STARTING",
+    "supplier": "Growers_Brains",
+    "images": ["product-0.jpeg", "product-1.jpg", "product-2.jpg"]
+  },
+  {
+    "_id": "5f30491dc673961aab2f24b8",
+    "name": "Vermiculite",
+    "price": 5,
+    "description": "Elementum nisi quis eleifend quam adipiscing vitae proin. ",
+    "brand": "Brand-5",
+    "category": "SOIL & SOIL AMENDMENTS",
+    "supplier": "Growers_Brains",
+    "images": ["product-0.jpeg", "product-1.jpg", "product-2.jpg"]
+  }
+]

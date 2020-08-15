@@ -1,0 +1,72 @@
+[
+  {
+    "_id": "5f304e763a894820b39c6f60",
+    "name": "Rose",
+    "description": "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur",
+    "images": ["plant-0.jpg", "plant-1.jpg", "plant-2.jpg"],
+    "grower": "5c8a1f292f8fb814b56fa184"
+  },
+  {
+    "_id": "5f304e763a894820b39c6f61",
+    "name": "Ambrosia",
+    "description": "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    "images": ["plant-3.jpg", "plant-4.jpg", "plant-5.jpg"],
+    "grower": "5c8a1f292f8fb814b56fa184"
+  },
+  {
+    "_id": "5f304e763a894820b39c6f62",
+    "name": "Almond",
+    "description": "In eu mi bibendum neque egestas congue quisque egestas diam. Facilisi nullam vehicula ipsum a arcu.",
+    "images": ["plant-6.jpg", "plant-7.jpg", "plant-8.jpg"],
+    "grower": "5c8a1f4e2f8fb814b56fa185"
+  },
+  {
+    "_id": "5f304e763a894820b39c6f63",
+    "name": "Corydalis flavula",
+    "description": " Tortor id aliquet lectus proin nibh nisl.",
+    "images": ["plant-9.jpg", "plant-10.jpg", "plant-29.jpg,"],
+    "grower": "5c8a201e2f8fb814b56fa186"
+  },
+  {
+    "_id": "5f304e763a894820b39c6f64",
+    "name": "Rudbeckia fulgida",
+    "description": "Ut eu sem integer vitae justo eget magna fermentum iaculis.",
+    "images": ["plant-11.jpg", "plant-12.jpg", "plant-13.jp,g"],
+    "grower": "5c8a21d02f8fb814b56fa189"
+  },
+  {
+    "_id": "5f304e763a894820b39c6f65",
+    "name": "Cardamine concatenata",
+    "description": "Maecenas accumsan lacus vel facilisis volutpat est. ",
+    "images": ["plant-14.jpg", "plant-15.jpg", "plant-16.jp,g"],
+    "grower": "5c8a21f22f8fb814b56fa18a"
+  },
+  {
+    "_id": "5f304e763a894820b39c6f66",
+    "name": "Bellis perennis",
+    "description": "Elit pellentesque habitant morbi tristique senectus et netus et malesuada.",
+    "images": ["plant-17.jpg", "plant-18.jpg", "plant-19.jp,g"],
+    "grower": "5c8a22c62f8fb814b56fa18b"
+  },
+  {
+    "_id": "5f304e763a894820b39c6f67",
+    "name": "Achillea ptarmica",
+    "description": "Tortor condimentum lacinia quis vel eros donec ac odio. ",
+    "images": ["plant-20.jpg", "plant-21.jpg", "plant-22.jp,g"],
+    "grower": "5c8a23412f8fb814b56fa18c"
+  },
+  {
+    "_id": "5f304e763a894820b39c6f68",
+    "name": "Hesperis matronalis",
+    "description": "Non arcu risus quis varius quam quisque id diam.",
+    "images": ["plant-23.jpg", "plant-24.jpg", "plant-25.jp,g"],
+    "grower": "5c8a24822f8fb814b56fa192"
+  },
+  {
+    "_id": "5f304e763a894820b39c6f69",
+    "name": "Veronica chamaedrys",
+    "description": "Pharetra et ultrices neque ornare aenean euismod elementum.",
+    "images": ["plant-26.jpg", "plant-27.jpg", "plant-28.jp,g"],
+    "grower": "5c8a24a02f8fb814b56fa193"
+  }
+]

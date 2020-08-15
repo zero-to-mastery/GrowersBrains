@@ -1,0 +1,57 @@
+[
+  {
+    "_id": "5c88fa8cf4afda39709c295a",
+    "plants": ["plant-11.jpg", "plant-12.jpg", "plant-13.jp,g"],
+    "grower": "5c8a21d02f8fb814b56fa189",
+    "soil": {
+      "type": "Sandy Soil",
+      "temperature": 24,
+      "ph": 6.2,
+      "water_food": "Lacus luctus accumsan tortor posuere ac ut consequat semper. Blandit cursus risus at ultrices mi tempus."
+    }
+  },
+  {
+    "_id": "5c88fa8cf4afda39709c295d",
+    "plants": ["plant-14.jpg", "plant-15,.jpg", "plant-16.jp,g"],
+    "grower": "5c8a21f22f8fb814b56fa18a",
+    "soil": {
+      "type": "Silt Soil.",
+      "temperature": 19,
+      "ph": 6.5,
+      "water_food": "Blandit massa enim nec dui nunc mattis enim ut tellus. Mi proin sed libero enim sed faucibus turpis in eu."
+    }
+  },
+  {
+    "_id": "5c88fa8cf4afda39709c295c",
+    "plants": ["plant-17.jpg", "plant-18,.jpg", "plant-19.jp,g"],
+    "grower": "5c8a22c62f8fb814b56fa18b",
+    "soil": {
+      "type": "Sandy Soil",
+      "temperature": 24,
+      "ph": 6.2,
+      "water_food": "Lacus luctus accumsan tortor posuere ac ut consequat semper. Blandit cursus risus at ultrices mi tempus."
+    }
+  },
+  {
+    "_id": "5c88fa8cf4afda39709c2955",
+    "plants": ["plant-20.jpg", "plant-21,.jpg", "plant-22.jp,g"],
+    "grower": "5c8a23412f8fb814b56fa18c",
+    "soil": {
+      "type": "Loamy Soil",
+      "temperature": 18,
+      "ph": 7,
+      "water_food": "Scelerisque in dictum non consectetur a. Sem integer vitae justo eget magna. Sed id semper risus in hendrerit."
+    }
+  },
+  {
+    "_id": "5c88fa8cf4afda39709c2974",
+    "plants": ["plant-23.jpg", "plant-24,.jpg", "plant-25.jp,g"],
+    "grower": "5c8a24822f8fb814b56fa192",
+    "soil": {
+      "type": "Loamy Soil",
+      "temperature": 18,
+      "ph": 7,
+      "water_food": "Scelerisque in dictum non consectetur a. Sem integer vitae justo eget magna. Sed id semper risus in hendrerit."
+    }
+  }
+]

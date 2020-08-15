@@ -1,0 +1,20 @@
+[
+  {
+    "_id": "5f305656adb6f62597cc5274",
+    "question": "Sed risus pretium quam vulputate dignissim. In iaculis nunc sed augue lacus viverra ?",
+    "asker": "5c8a1e1a2f8fb814b56fa182",
+    "category": "Planting"
+  },
+  {
+    "_id": "5f305656adb6f62597cc5275",
+    "question": "Donec ultrices tincidunt arcu non sodales neque sodales ut etiam ?",
+    "asker": "5c8a1ec62f8fb814b56fa183",
+    "category": "Soil"
+  },
+  {
+    "_id": "5f305656adb6f62597cc5276",
+    "question": " Volutpat blandit aliquam etiam erat velit scelerisque ?",
+    "asker": "5c8a20d32f8fb814b56fa187",
+    "category": "Water"
+  }
+]
