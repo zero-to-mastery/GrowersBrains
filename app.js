@@ -14,6 +14,9 @@ const userRouter = require('./routes/userRoutes');
 const articleRouter = require('./routes/articleRoutes');
 const reviewArticleRouter = require('./routes/reviewArticleRoutes');
 const reviewGreenhouseRouter = require('./routes/reviewGreenhouseRoutes');
+const jobRouter = require('./routes/jobRoutes');
+const questionRouter = require('./routes/questionRoutes');
+const answerRouter = require('./routes/answerRoutes');
 
 const app = express();
 
@@ -50,6 +53,9 @@ app.use('/api/v1/greenhouses', greenhouseRouter);
 app.use('/api/v1/articles', articleRouter);
 app.use('/api/v1/reviews-article', reviewArticleRouter);
 app.use('/api/v1/reviews-greenhouse', reviewGreenhouseRouter);
+app.use('/api/v1/jobs', jobRouter);
+app.use('/api/v1/questions', questionRouter);
+app.use('/api/v1/answers', answerRouter);
 
 app.all('*', (req, res, next) => {
   next(new AppError(`Can't find ${req.originalUrl} on this server`, 404));

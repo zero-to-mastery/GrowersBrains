@@ -1,39 +1,34 @@
 const mongoose = require('mongoose');
 const User = require('./userModel');
 
-const articleSchema = new mongoose.Schema(
-  {
-    title: {
-      type: String,
-      required: [true, 'Article must have a title'],
-    },
-    content: {
-      type: String,
-      required: [true, 'Article must have a content'],
-    },
-    author: {
-      type: mongoose.Schema.ObjectId,
-      ref: 'User',
-      required: [true, 'Article must have an author'],
-    },
-    ratingsAverage: {
-      type: Number,
-      default: 0,
-    },
-    ratingsQuantity: {
-      type: Number,
-      default: 0,
-    },
-    createdAt: {
-      type: Date,
-      default: Date.now(),
-    },
+const articleSchema = new mongoose.Schema({
+  title: {
+    type: String,
+    required: [true, 'Article must have a title'],
   },
-  {
-    toJSON: { validate: true },
-    toObject: { validate: true },
-  }
-);
+  content: {
+    type: String,
+    required: [true, 'Article must have a content'],
+  },
+  author: {
+    type: mongoose.Schema.ObjectId,
+    ref: 'User',
+    required: [true, 'Article must have an author'],
+  },
+  ratingsAverage: {
+    type: Number,
+    default: 0,
+    set: (val) => Math.round(val * 10) / 10,
+  },
+  ratingsQuantity: {
+    type: Number,
+    default: 0,
+  },
+  createdAt: {
+    type: Date,
+    default: Date.now(),
+  },
+});
 articleSchema.statics.calculNumberOfArticles = async function (authorId) {
   const stats = await this.aggregate([
     {
@@ -67,7 +62,7 @@ articleSchema.post('save', function () {
 //NOTE : findByIdAndUpdate is a shortand for findOneAndUpdate , same for all finById.... check mongoose documentation for more info
 articleSchema.pre(/^findOneAnd/, async function (next) {
   this.article = await this.findOne();
-  console.log(this.article);
+  // console.log(this.article);
   next();
 });
 articleSchema.post(/^findOneAnd/, async function () {
