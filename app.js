@@ -7,17 +7,6 @@ const xss = require('xss-clean');
 
 const AppError = require('./utils/appError');
 const globalErrorHandler = require('./controllers/errorController');
-const plantRouter = require('./routes/plantRoutes');
-const productRouter = require('./routes/productRoutes');
-const greenhouseRouter = require('./routes/greenhouseRoutes');
-const userRouter = require('./routes/userRoutes');
-const articleRouter = require('./routes/articleRoutes');
-const reviewArticleRouter = require('./routes/reviewArticleRoutes');
-const reviewGreenhouseRouter = require('./routes/reviewGreenhouseRoutes');
-const jobRouter = require('./routes/jobRoutes');
-const questionRouter = require('./routes/questionRoutes');
-const answerRouter = require('./routes/answerRoutes');
-
 const app = express();
 
 //Devlopment middleware
@@ -46,16 +35,19 @@ app.use(xss());
 
 //ROUTES
 
-app.use('/api/v1/plants', plantRouter);
-app.use('/api/v1/users', userRouter);
-app.use('/api/v1/products', productRouter);
-app.use('/api/v1/greenhouses', greenhouseRouter);
-app.use('/api/v1/articles', articleRouter);
-app.use('/api/v1/reviews-article', reviewArticleRouter);
-app.use('/api/v1/reviews-greenhouse', reviewGreenhouseRouter);
-app.use('/api/v1/jobs', jobRouter);
-app.use('/api/v1/questions', questionRouter);
-app.use('/api/v1/answers', answerRouter);
+app.use('/api/v1/plants', require('./routes/plantRoutes'));
+app.use('/api/v1/users', require('./routes/productRoutes'));
+app.use('/api/v1/products', require('./routes/greenhouseRoutes'));
+app.use('/api/v1/greenhouses', require('./routes/userRoutes'));
+app.use('/api/v1/articles', require('./routes/articleRoutes'));
+app.use('/api/v1/reviews-article', require('./routes/reviewArticleRoutes'));
+app.use(
+  '/api/v1/reviews-greenhouse',
+  require('./routes/reviewGreenhouseRoutes')
+);
+app.use('/api/v1/jobs', require('./routes/jobRoutes'));
+app.use('/api/v1/questions', require('./routes/questionRoutes'));
+app.use('/api/v1/answers', require('./routes/answerRoutes'));
 
 app.all('*', (req, res, next) => {
   next(new AppError(`Can't find ${req.originalUrl} on this server`, 404));
