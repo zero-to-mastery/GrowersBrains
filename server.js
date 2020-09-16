@@ -10,19 +10,19 @@ process.on('uncaughtException', (err) => {
 
 const app = require('./app');
 
-//Use this if you will use a local database
-// mongoose.connect('mongodb://localhost:27017/GrowersBrains')
-// .then(() => console.log('Successfully connected to the database!'));
+// Use this if you will use a local database
+mongoose.connect('mongodb://localhost:27017/GrowersBrains')
+.then(() => console.log('Successfully connected to the database!'));
 
-mongoose
-  .connect(process.env.MONGO_URI, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-    useFindAndModify: false,
-    useCreateIndex: true,
-  })
-  .then(() => console.log('Successfully connected to the database!'));
-//No need to add the catch block because we add an event listener to the `unhandledRejection` he will take care off it
+// mongoose
+//   .connect(process.env.MONGO_URI, {
+//     useNewUrlParser: true,
+//     useUnifiedTopology: true,
+//     useFindAndModify: false,
+//     useCreateIndex: true,
+//   })
+//   .then(() => console.log('Successfully connected to the database!'));
+//No need to add the catch block because we add an event listener to the `unhandledRejection` he will take care of it
 
 const port = process.env.PORT || 5000;
 const server = app.listen(port, () => {

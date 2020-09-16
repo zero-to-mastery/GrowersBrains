@@ -7,7 +7,7 @@
     "client": "cd client && npm start",
     "server:dev": "nodemon server.js",
     "server:prod": "NODE_ENV=production nodemon server.js",
-    "import-data" : "node dev-data/script-import-dev-data.js --import",
+    "import-data": "node dev-data/script-import-dev-data.js --import",
     "delete-data": "node dev-data/script-import-dev-data.js --delete",
     "debug": "ndb server.js",
     "build": "cd client && npm run build",
